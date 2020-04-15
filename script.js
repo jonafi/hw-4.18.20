@@ -6,6 +6,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  
+
   passwordText.value = password;
 
 }
@@ -13,7 +15,8 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//Complete list of valid characters as object containing 4 arrays
+function generatePassword(){
+  //Complete list of valid characters as object containing 4 arrays
 var validCharacters = {
   "numbers": [0,1,2,3,4,5,6,7,8,9],
   "lowers": ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
@@ -61,4 +64,5 @@ for(var i=0;i<passwordlength;i++)
   var selectedCharacter = randomChoice(randomChoice(validArrays));
   password = password.concat(selectedCharacter);
 }
-console.log(password);
+return password;
+}
